@@ -25,7 +25,25 @@ public class insertion {
            current = current.next;
         }
         current.next = newNode;
-     }
+    }
+
+    public void insertAtPosition(int value,int pos){
+        ListNode node=new ListNode(value);
+        if(pos==1){
+            node.next=head;
+            head=node;
+        }else{
+            ListNode prev= head;
+            int count=1;
+            while (count<pos-1) {
+                prev=prev.next;
+                count++;
+            }ListNode current=prev.next;
+            node.next=current;
+            prev.next=node;
+
+        }
+    }
 
     public void display(){
         ListNode current= head;
@@ -41,7 +59,9 @@ public class insertion {
         sll.insertFirst(3);
         sll.insertFirst(9);
         sll.insertFirst(30);
-
+        sll.insertLast(20);
+        sll.insertLast(10);
+        sll.insertAtPosition(40, 4);
         sll.display();
     }
     
