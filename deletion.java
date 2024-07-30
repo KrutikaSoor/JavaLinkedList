@@ -25,6 +25,20 @@ public class deletion {
 
     }
 
+    public void deleteLast(){
+       if(head==null || head.next==null){
+       return head;
+       }
+        ListNode curr=head;
+        ListNode prev=null;
+        while(curr.next!=null){
+            prev=curr;
+            curr=curr.next;
+        }
+        prev.next=null;
+        return curr;
+    } 
+
     public void display(){
         ListNode current= head;
         while(current!=null){
@@ -41,6 +55,7 @@ public class deletion {
         sll.insertFirst(30);
         sll.display();
         sll.deleteFirst();
+        sll.deleteLast();
         sll.display();
     }
 
