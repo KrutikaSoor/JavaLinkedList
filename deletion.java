@@ -25,7 +25,7 @@ public class deletion {
 
     }
 
-    public void deleteLast(){
+    public  ListNode deleteLast(){
        if(head==null || head.next==null){
        return head;
        }
@@ -38,6 +38,22 @@ public class deletion {
         prev.next=null;
         return curr;
     } 
+
+    public void deletePos(int pos){
+        if(pos==1){
+            head=head.next;
+        }
+        else{
+            ListNode prev=head;
+            int count=1;
+            while (count<pos-1) {
+                prev=prev.next;
+                count++;
+            }
+            ListNode current= prev.next;
+            prev.next=current.next;
+        }
+    }
 
     public void display(){
         ListNode current= head;
@@ -53,9 +69,12 @@ public class deletion {
         sll.insertFirst(3);
         sll.insertFirst(9);
         sll.insertFirst(30);
+        sll.insertFirst(33);
         sll.display();
         sll.deleteFirst();
         sll.deleteLast();
+        sll.display();
+        sll.deletePos(2);
         sll.display();
     }
 
