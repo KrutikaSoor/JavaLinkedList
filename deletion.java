@@ -63,6 +63,21 @@ public class deletion {
         }System.out.println("null");
     }
 
+    public void removeDuplicatesSortedList(){
+        if(head==null){
+            return;
+        }
+        ListNode current= head;
+        while(current!=null && current.next!=null){
+            if(current.data==current.next.data){
+                current.next=current.next.next;
+            }
+            else{
+                current=current.next;
+            }
+        }
+    }
+
     public static void main(String[] args){
         deletion sll=new deletion();
         sll.insertFirst(2);
@@ -70,6 +85,10 @@ public class deletion {
         sll.insertFirst(9);
         sll.insertFirst(30);
         sll.insertFirst(33);
+        sll.insertFirst(67);
+        sll.insertFirst(2);
+        sll.insertFirst(3);
+        sll.insertFirst(6);
         sll.display();
         sll.deleteFirst();
         sll.deleteLast();
