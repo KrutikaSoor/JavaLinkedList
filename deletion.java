@@ -78,6 +78,18 @@ public class deletion {
         }
     }
 
+    public boolean search(int searchKey){
+        ListNode current=head;
+        while(current!=null){
+        if(current.data==searchKey){
+            return true;
+        }
+            current=current.next;
+        }
+        return false;
+
+    }
+
     public static void main(String[] args){
         deletion sll=new deletion();
         sll.insertFirst(2);
@@ -95,6 +107,12 @@ public class deletion {
         sll.display();
         sll.deletePos(2);
         sll.display();
+        if(sll.search(3)==true){
+            System.out.println("Element found");
+        }
+        else{
+            System.out.println("Element not found");
+        }
     }
 
 }
